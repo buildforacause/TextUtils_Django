@@ -1,0 +1,48 @@
+{% include "header.html" %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Welcome to TextUtils !</strong> You can modify your text below.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+    <div class="container">
+<h1 class="text-center">Welcome to the TEXT ANALYZER </h1>
+<form action="/analyze/" method="post">
+    {% csrf_token %}
+  <div class="input-group">
+    <span class="input-group-text">Your Text Here</span>
+    <textarea name="text" style='width: 1099px; height: 139px;' class="form-control" aria-label="With textarea"></textarea>
+  </div>
+
+<div class="form-check form-switch">
+  <input class="form-check-input" name="removepunc" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+  <label class="form-check-label" for="flexSwitchCheckDefault">Remove Punctuations</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" name="capfirst" type="checkbox" role="switch" id="flexSwitchCheckDefault1">
+  <label class="form-check-label" for="flexSwitchCheckDefault1">Title Case Text</label>
+</div>
+      <div class="form-check form-switch">
+  <input class="form-check-input" name="reverse" type="checkbox" role="switch" id="flexSwitchCheckDefault2">
+  <label class="form-check-label" for="flexSwitchCheckDefault2">Reverse Text</label>
+</div>
+      <div class="form-check form-switch">
+  <input class="form-check-input" name="spacerem" type="checkbox" role="switch" id="flexSwitchCheckDefault3">
+  <label class="form-check-label" for="flexSwitchCheckDefault3">Remove Space</label>
+</div>
+      <div class="form-check form-switch">
+  <input class="form-check-input" name="charcount" type="checkbox" role="switch" id="flexSwitchCheckDefault4">
+  <label class="form-check-label" for="flexSwitchCheckDefault4">Count Characters</label>
+</div>
+      <div class="form-check form-switch">
+  <input class="form-check-input" name="upcase" type="checkbox" role="switch" id="flexSwitchCheckDefault5">
+  <label class="form-check-label" for="flexSwitchCheckDefault5">Upper Case Text</label>
+</div>
+      <div class="form-check form-switch">
+  <input class="form-check-input" name="lowcase" type="checkbox" role="switch" id="flexSwitchCheckDefault6">
+  <label class="form-check-label" for="flexSwitchCheckDefault6">Lower Case Text</label>
+</div>
+
+    <button class="btn-dark btn mt-3" type="submit">Analyze Text</button>
+  </form>
+</div>
+{% include "footer.html" %}
